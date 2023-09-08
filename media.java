@@ -5,14 +5,14 @@
 
 import java.util.Scanner;
 
-public class media {  
+public class media {
 
     public static void main(String[] args) {
         Scanner var = new Scanner(System.in);
         int nota1, nota2, nota3, nota4;
-        float media, i;
+        float media;
 
-        for (i = 0; i < 4; i++){
+        for (int i = 0; i < 6; i++) {
 
             System.out.println("Aluno, digite a sua primeira nota");
             nota1 = var.nextInt();
@@ -29,14 +29,17 @@ public class media {
             media = (nota1 + nota2 + nota3 + nota4) / 4;
             System.out.println("A média do aluno é " + media);
 
-            if ((media <= 0) || (media < 4)) {
+            if (media < 4) {
                 System.out.println("Não Aprovado");
-            }
-            if (media >=5){
+                break;
+            } else if (media >= 4 && media < 7) {
+                System.out.println("Aluno está em recuperação");
+                break;
+            } else if (media >= 7) {
                 System.out.println("Aprovado");
+                break;
             }
         }
-        
     }
-
 }
+
